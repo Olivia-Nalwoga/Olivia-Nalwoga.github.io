@@ -1,213 +1,133 @@
-"use client";
+const experiences = [
+  {
+    date: "Aug 2026 – Present",
+    title: "Graduate Research Assistant",
+    company: "University of St. Thomas",
+    focus: "Data Science Research · Python · SQL · Technical Support",
+    description:
+      "Collaborate with faculty on software engineering and data science research while supporting graduate students with Python, SQL, and technical concepts. Maintain and troubleshoot lab and classroom systems used for teaching and research.",
+  },
+  {
+    date: "Dec 2025 – Present",
+    title: "Student Assistant, Human Resources",
+    company: "University of St. Thomas",
+    focus: "Data Quality · HR Systems · Organizational Records",
+    description:
+      "Process, validate, and audit employment and payroll records across university systems. Use Excel audit reports and enterprise platforms to investigate discrepancies, maintain data accuracy, and support student employee onboarding.",
+  },
+  {
+    date: "Jun 2025 – Aug 2025",
+    title: "Assistant Planner",
+    company: "Uganda Human Rights Commission",
+    focus: "Survey Data · Analysis · Reporting",
+    description:
+      "Designed surveys in Kobo Toolbox, prepared quantitative and qualitative program data, analyzed quarterly data in Excel, supported validation activities, and contributed to organizational reporting and planning.",
+  },
+  {
+    date: "Jun 2023 – May 2025",
+    title: "Update Officer / Registration Assistant / Planning Intern",
+    company: "NIRA",
+    focus: "Registration Data · Record Accuracy",
+    description:
+      "Registered applicants, updated demographic and biometric records, supported community data collection, and maintained accurate information for registration workflows.",
+  },
+];
 
-import { useState } from "react";
+const skillGroups = [
+  {
+    number: "01",
+    title: "Programming & Data Analysis",
+    description: "Prepare, transform, analyze, and communicate data.",
+    skills: [
+      "Python",
+      "pandas",
+      "NumPy",
+      "SQL",
+      "Excel",
+      "Data Cleaning",
+      "Data Analysis",
+      "Data Visualization",
+      "Data Reporting",
+    ],
+  },
+  {
+    number: "02",
+    title: "Statistical Methods",
+    description: "Build, evaluate, and validate statistical models.",
+    skills: [
+      "Statistical Analysis",
+      "Regression",
+      "LASSO",
+      "Model Validation",
+      "Cross-validation",
+      "Permutation Testing",
+      "Bootstrap Methods",
+    ],
+  },
+  {
+    number: "03",
+    title: "Databases & Platforms",
+    description: "Structure, model, query, and work with data systems.",
+    skills: [
+      "Oracle SQL",
+      "Relational Database Design",
+      "Data Modeling",
+      "AWS S3",
+      "Jupyter Notebook",
+      "GitHub",
+      "Cognos Analytics",
+      "Kobo Toolbox",
+    ],
+  },
+];
+
+const enterpriseSystems = [
+  "Banner",
+  "SharePoint",
+  "iCIMS",
+  "Alerus",
+  "Optix",
+];
 
 export default function Home() {
-  const [selectedSkill, setSelectedSkill] = useState("Programming");
-  const [selectedEducation, setSelectedEducation] = useState("Masters");
-  const [selectedExperience, setSelectedExperience] = useState("Lab");
-  const [selectedCourse, setSelectedCourse] = useState("Python");
-
-  const skillCategories = {
-    Programming: {
-      title: "Programming & Query Languages",
-      subtitle: "Core languages for analysis, databases, and problem solving",
-      skills: ["Python", "SQL"],
-    },
-    Analytics: {
-      title: "Analytics & Modeling",
-      subtitle: "Methods used across projects and graduate coursework",
-      skills: [
-        "Statistical Analysis",
-        "Regression",
-        "LASSO",
-        "Model Validation",
-        "Bootstrap",
-        "Permutation Testing",
-      ],
-    },
-    Databases: {
-      title: "Databases & Data Engineering",
-      subtitle: "Tools for organizing, modeling, and querying data",
-      skills: [
-        "Oracle SQL Developer",
-        "Relational Database Design",
-        "Data Modeling",
-        "Analytical SQL",
-      ],
-    },
-    Cloud: {
-      title: "Cloud & Development Tools",
-      subtitle: "Tools used for technical and cloud-based projects",
-      skills: ["AWS S3", "GitHub", "Jupyter Notebook"],
-    },
-    Systems: {
-      title: "Data & Enterprise Systems",
-      subtitle: "Systems used in university and operational work",
-      skills: [
-        "Excel",
-        "Cognos Analytics",
-        "Banner",
-        "SharePoint",
-        "Optix",
-        "iCIMS",
-        "Alerus",
-        "Kobo Toolbox",
-      ],
-    },
-  };
-
-  const education = {
-    Masters: {
-      degree: "Master’s Degree",
-      school: "University of St. Thomas",
-      program: "MS in Data Science",
-      gpa: "4.0 / 4.0",
-      graduation: "Dec 2027",
-      location: "St. Paul, Minnesota",
-    },
-    Bachelors: {
-      degree: "Bachelor’s Degree",
-      school: "Makerere University",
-      program: "Bachelor’s Degree in Statistics",
-      gpa: "4.02 / 5.0",
-      graduation: "Dec 2024",
-      location: "Kampala, Uganda",
-    },
-  };
-
-  const experiences = {
-    Lab: {
-      title: "Graduate Lab Assistant – Computer Systems Support",
-      company: "University of St. Thomas",
-      date: "Aug 2026 – Present",
-      label: "Data Science Education + Technical Support",
-      bullets: [
-        "Tutor graduate Data Science students in Python, SQL, and technical course concepts.",
-        "Help students troubleshoot code and understand data-related problems.",
-        "Provide technical support for PCs, software, lab peripherals, and academic technologies.",
-        "Troubleshoot hardware, software, and networking issues in engineering labs and classrooms.",
-      ],
-    },
-
-    HR: {
-      title: "Student Assistant, Human Resources",
-      company: "University of St. Thomas",
-      date: "Dec 2025 – Present",
-      label: "Data Quality + HR Systems",
-      bullets: [
-        "Process and verify student payroll and employment records.",
-        "Perform data entry, auditing, and validation using Banner, Cognos, SharePoint, Optix, iCIMS, and Alerus.",
-        "Analyze Excel audit reports to identify discrepancies and support accurate records and payments.",
-      ],
-    },
-
-    UHRC: {
-      title: "Assistant Planner",
-      company: "Uganda Human Rights Commission",
-      date: "Jun 2025 – Aug 2025",
-      label: "Data Collection + Reporting",
-      bullets: [
-        "Designed and administered surveys using Kobo Toolbox.",
-        "Compiled and analyzed quantitative and qualitative data.",
-        "Used Excel analysis and data validation to support reporting and strategic planning.",
-      ],
-    },
-
-    NIRA: {
-      title: "Update Officer / Registration Assistant / Planning Intern",
-      company: "NIRA",
-      date: "Jun 2023 – May 2025",
-      label: "Data Accuracy + Records",
-      bullets: [
-        "Registered applicants and updated demographic and biometric records.",
-        "Supported community data collection and maintained accurate registration records.",
-      ],
-    },
-  };
-
-  const courses = {
-    Python: {
-      title: "Foundations of Python",
-      grade: "A",
-      status: "Completed",
-      description:
-        "Built a foundation in Python programming, problem solving, data structures, functions, and computational thinking.",
-      skills: ["Python", "Programming", "Problem Solving"],
-    },
-
-    Database: {
-      title: "Database Management Systems & Design",
-      grade: "A",
-      status: "Completed",
-      description:
-        "Studied relational database design, data modeling, SQL, constraints, joins, views, triggers, and analytical querying.",
-      skills: ["Oracle SQL", "Database Design", "Data Modeling"],
-    },
-
-    Cloud: {
-      title: "Cloud Computing",
-      grade: "A",
-      status: "Completed",
-      description:
-        "Worked with cloud architecture and AWS services, including S3 static website hosting and cross-region replication.",
-      skills: ["AWS", "S3", "Cloud Computing"],
-    },
-
-    DataPrep: {
-      title: "Data Preparation & Analysis",
-      grade: "A",
-      status: "Completed",
-      description:
-        "Applied statistical modeling, data preparation, regression, LASSO variable selection, permutation testing, and bootstrap validation.",
-      skills: ["Python", "LASSO", "Regression", "Model Validation"],
-    },
-
-    Visualization: {
-      title: "Data Analytics & Visualization",
-      grade: "In Progress",
-      status: "Fall 2026",
-      description:
-        "Current graduate coursework focused on analyzing data and communicating results through effective visualization.",
-      skills: ["Data Analytics", "Visualization"],
-    },
-
-    Warehousing: {
-      title: "Data Warehousing",
-      grade: "In Progress",
-      status: "Fall 2026",
-      description:
-        "Current graduate coursework focused on analytical systems, data warehousing, and dimensional approaches to decision-support data.",
-      skills: ["Data Warehousing", "Analytics", "Data Modeling"],
-    },
-  };
-
   return (
-    <main className="min-h-screen bg-white text-slate-900">
-      {/* NAVIGATION */}
+    <>
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-lg focus:bg-purple-700 focus:px-4 focus:py-3 focus:text-white"
+      >
+        Skip to content
+      </a>
+
+      {/* HEADER */}
       <header className="sticky top-0 z-50 border-b border-slate-200 bg-white/95 backdrop-blur">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-          <a href="#home">
-            <p className="text-lg font-black text-purple-700">
-              OLIVIA NALWOGA
-            </p>
+          <a
+            href="#home"
+            className="flex items-center gap-2 font-black"
+            aria-label="Olivia Nalwoga, back to top"
+          >
+            <span className="text-xl text-purple-700">ON.</span>
+            <span>Olivia Nalwoga</span>
           </a>
 
-          <nav className="hidden items-center gap-6 lg:flex">
+          <nav
+            className="hidden items-center gap-5 lg:flex"
+            aria-label="Main navigation"
+          >
             {[
               ["HOME", "#home"],
               ["PROJECTS", "#projects"],
-              ["SKILLS", "#skills"],
-              ["EDUCATION", "#education"],
               ["EXPERIENCE", "#experience"],
-              ["COURSEWORK", "#coursework"],
-              ["CERTIFICATIONS", "#certifications"],
+              ["SKILLS", "#skills"],
+              ["RESEARCH", "#research"],
+              ["EDUCATION", "#education"],
               ["CONTACT", "#contact"],
-            ].map(([name, link]) => (
+            ].map(([name, href]) => (
               <a
                 key={name}
-                href={link}
-                className="text-xs font-bold tracking-widest text-slate-600 hover:text-purple-700"
+                href={href}
+                className="text-xs font-bold tracking-widest text-slate-600 transition hover:text-purple-700"
               >
                 {name}
               </a>
@@ -216,630 +136,881 @@ export default function Home() {
             <a
               href="/resume.pdf"
               target="_blank"
-              className="rounded-full bg-purple-700 px-5 py-2 text-xs font-bold tracking-widest text-white"
+              rel="noopener noreferrer"
+              className="rounded-full bg-purple-700 px-5 py-2 text-xs font-bold tracking-widest text-white transition hover:bg-purple-800"
             >
-              RESUME
+              RESUME ↗
             </a>
           </nav>
+
+          <details className="relative lg:hidden">
+            <summary className="cursor-pointer list-none rounded-full border border-slate-300 px-4 py-2 text-sm font-bold">
+              Menu
+            </summary>
+
+            <nav
+              className="absolute right-0 mt-3 flex w-56 flex-col gap-3 rounded-2xl border border-slate-200 bg-white p-5 shadow-xl"
+              aria-label="Mobile navigation"
+            >
+              {[
+                ["Home", "#home"],
+                ["Projects", "#projects"],
+                ["Experience", "#experience"],
+                ["Skills", "#skills"],
+                ["Research", "#research"],
+                ["Education", "#education"],
+                ["Contact", "#contact"],
+              ].map(([name, href]) => (
+                <a
+                  key={name}
+                  href={href}
+                  className="font-semibold text-slate-700 hover:text-purple-700"
+                >
+                  {name}
+                </a>
+              ))}
+
+              <a
+                href="/resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-bold text-purple-700"
+              >
+                Resume PDF ↗
+              </a>
+            </nav>
+          </details>
         </div>
       </header>
 
-      {/* HOME */}
-      <section
-        id="home"
-        className="mx-auto grid min-h-[80vh] max-w-7xl items-center gap-12 px-6 py-20 lg:grid-cols-2"
-      >
-        <div>
-          <p className="font-bold tracking-[0.2em] text-purple-700">
-            WELCOME TO MY PORTFOLIO
-          </p>
+      <main id="main-content" className="min-h-screen bg-white text-slate-950">
+        {/* HERO */}
+        <section
+          id="home"
+          className="mx-auto grid max-w-7xl items-center gap-12 px-6 py-20 lg:grid-cols-[1.1fr_0.9fr]"
+        >
+          <div>
+            <p className="text-xs font-black uppercase tracking-[0.25em] text-purple-700">
+              Python · SQL · Statistics
+            </p>
 
-          <h1 className="mt-5 text-5xl font-black leading-tight md:text-6xl">
-            Hi, I&apos;m Olivia.
-            <span className="block text-purple-700">
-              MS in Data Science.
-            </span>
-          </h1>
+            <h1 className="mt-5 text-5xl font-black tracking-tight md:text-7xl">
+              Olivia Nalwoga<span className="text-purple-700">.</span>
+            </h1>
 
-          <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-600">
-            Data Science graduate student with a strong foundation in
-            statistics, Python, SQL, database design, data analysis, and cloud
-            technologies.
-          </p>
+            <p className="mt-4 text-2xl font-semibold text-purple-700 md:text-3xl">
+              Data Analyst <span className="text-slate-400">|</span> Data Science
+            </p>
 
-          <p className="mt-4 max-w-2xl text-lg leading-8 text-slate-600">
-            I enjoy turning complex data into clear, reliable insights and
-            building analytical solutions that support better decisions.
-          </p>
+            <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-600">
+              Statistics-trained data professional using Python, SQL,
+              statistical modeling, and data analysis to turn complex data into
+              reliable, decision-ready insights.
+            </p>
 
-          <p className="mt-5 font-bold text-purple-700">
-            Data Science · Data Analytics · Data Engineering
-          </p>
+            <p className="mt-5 leading-7 text-slate-600">
+              M.S. Data Science, University of St. Thomas ·{" "}
+              <strong>4.0 GPA</strong>
+              <br />
+              Expected Dec 2027 · B.S. Statistics, Makerere University
+            </p>
 
-          <div className="mt-8 flex flex-wrap gap-3">
-            <a
-              href="#projects"
-              className="rounded-full bg-purple-700 px-6 py-3 font-bold text-white"
-            >
-              View Projects
-            </a>
-
-            <a
-              href="https://github.com/Olivia-Nalwoga"
-              target="_blank"
-              className="rounded-full border border-slate-300 px-6 py-3 font-bold"
-            >
-              GitHub
-            </a>
-
-            <a
-              href="https://www.linkedin.com/in/olivia-nalwoga-a3ab10382/"
-              target="_blank"
-              className="rounded-full border border-slate-300 px-6 py-3 font-bold"
-            >
-              LinkedIn
-            </a>
-
-            <a
-              href="/resume.pdf"
-              target="_blank"
-              className="rounded-full border border-purple-300 px-6 py-3 font-bold text-purple-700"
-            >
-              Resume
-            </a>
-          </div>
-        </div>
-
-        <div className="rounded-3xl border border-purple-100 bg-purple-50 p-8">
-          <p className="text-sm font-bold uppercase tracking-widest text-purple-700">
-            Currently
-          </p>
-
-          <h2 className="mt-4 text-3xl font-black">MS Data Science</h2>
-          <p className="mt-1 text-slate-600">University of St. Thomas</p>
-
-          <div className="my-6 border-t border-purple-200" />
-
-          <p className="font-black">
-            Graduate Lab Assistant – Computer Systems Support
-          </p>
-
-          <p className="mt-2 text-sm text-slate-600">
-            Python & SQL tutoring · Technical support · Engineering labs
-          </p>
-
-          <div className="mt-7 grid grid-cols-2 gap-4">
-            <div className="rounded-2xl bg-white p-5">
-              <p className="text-3xl font-black text-purple-700">4.0</p>
-              <p className="text-sm text-slate-500">Graduate GPA</p>
-            </div>
-
-            <div className="rounded-2xl bg-white p-5">
-              <p className="text-2xl font-black text-purple-700">Dec 2027</p>
-              <p className="text-sm text-slate-500">Graduation</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* PROJECTS */}
-      <section id="projects" className="bg-slate-50">
-        <div className="mx-auto max-w-7xl px-6 py-20">
-          <h2 className="text-4xl font-black">Projects</h2>
-
-          <p className="mt-3 text-lg text-slate-600">
-            Selected academic projects demonstrating applied data science and
-            database skills.
-          </p>
-
-          <div className="mt-10 grid gap-6 lg:grid-cols-2">
-            <div className="rounded-3xl border bg-white p-7 shadow-sm">
-              <p className="text-sm font-bold text-purple-700">
-                PYTHON · STATISTICAL LEARNING
-              </p>
-
-              <h3 className="mt-3 text-2xl font-black">
-                High-Dimensional Variable Selection in NHANES
-              </h3>
-
-              <p className="mt-4 leading-7 text-slate-600">
-                Analyzed 92,988 NHANES records and 220 variables to model
-                hemoglobin levels and evaluate whether a reduced predictor set
-                could preserve predictive performance.
-              </p>
-
-              <div className="mt-6 flex flex-wrap gap-2">
-                {[
-                  "92,988 Records",
-                  "220 Variables",
-                  "14 → 8 Predictors",
-                  "LASSO",
-                ].map((item) => (
-                  <span
-                    key={item}
-                    className="rounded-full bg-purple-50 px-3 py-2 text-sm font-bold text-purple-700"
-                  >
-                    {item}
-                  </span>
-                ))}
-              </div>
-
-              <div className="mt-7 flex gap-5">
-                <a
-                  href="https://github.com/Olivia-Nalwoga/UST-631-high-dimensional-variable-selection"
-                  target="_blank"
-                  className="font-bold text-purple-700"
-                >
-                  GitHub →
-                </a>
-
-                <a
-                  href="https://github.com/Olivia-Nalwoga/UST-631-high-dimensional-variable-selection/blob/main/analysis.ipynb"
-                  target="_blank"
-                  className="font-bold text-purple-700"
-                >
-                  Notebook →
-                </a>
-              </div>
-            </div>
-
-            <div className="rounded-3xl border bg-white p-7 shadow-sm">
-              <p className="text-sm font-bold text-purple-700">
-                ORACLE SQL · DATABASE DESIGN
-              </p>
-
-              <h3 className="mt-3 text-2xl font-black">
-                Job Market & Salary Analytics
-              </h3>
-
-              <p className="mt-4 leading-7 text-slate-600">
-                Designed a normalized relational database connecting job
-                seekers, employers, skills, job postings, applications, and
-                salary information.
-              </p>
-
-              <div className="mt-6 flex flex-wrap gap-2">
-                {[
-                  "8 Tables",
-                  "3 Triggers",
-                  "2 Views",
-                  "Analytical SQL",
-                ].map((item) => (
-                  <span
-                    key={item}
-                    className="rounded-full bg-purple-50 px-3 py-2 text-sm font-bold text-purple-700"
-                  >
-                    {item}
-                  </span>
-                ))}
-              </div>
-
-              <div className="mt-7 flex gap-5">
-                <a
-                  href="https://github.com/Olivia-Nalwoga/job-market-salary-analytics"
-                  target="_blank"
-                  className="font-bold text-purple-700"
-                >
-                  GitHub →
-                </a>
-
-                <a
-                  href="https://github.com/Olivia-Nalwoga/job-market-salary-analytics/blob/main/final_project_DDL.sql"
-                  target="_blank"
-                  className="font-bold text-purple-700"
-                >
-                  View SQL →
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* SKILLS */}
-      <section id="skills" className="mx-auto max-w-7xl px-6 py-20">
-        <h2 className="text-4xl font-black">Skills</h2>
-
-        <p className="mt-3 text-lg text-slate-600">
-          Click a category to explore my technical toolkit.
-        </p>
-
-        <div className="mt-10 grid gap-4 md:grid-cols-2">
-          {Object.entries(skillCategories).map(([key, category]) => {
-            const selected = selectedSkill === key;
-
-            return (
-              <button
-                key={key}
-                onClick={() => setSelectedSkill(key)}
-                className={`rounded-2xl border p-6 text-left transition ${
-                  selected
-                    ? "border-purple-700 bg-purple-50"
-                    : "border-slate-200 bg-white hover:border-purple-300"
-                }`}
+            <div className="mt-8 flex flex-wrap gap-3">
+              <a
+                href="#projects"
+                className="rounded-full bg-purple-700 px-6 py-3 font-bold text-white transition hover:bg-purple-800"
               >
-                <div className="flex justify-between gap-4">
-                  <div>
-                    <h3 className="text-xl font-black">{category.title}</h3>
-                    <p className="mt-2 text-slate-600">
-                      {category.subtitle}
-                    </p>
-                  </div>
+                View Projects ↓
+              </a>
 
-                  <span
-                    className={`h-fit rounded-full px-3 py-1 text-xs font-bold ${
-                      selected
-                        ? "bg-purple-700 text-white"
-                        : "bg-slate-100 text-slate-700"
-                    }`}
-                  >
-                    {selected ? "Selected" : "Select"}
-                  </span>
-                </div>
-              </button>
-            );
-          })}
-        </div>
+              <a
+                href="/resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded-full border border-slate-300 px-6 py-3 font-bold"
+              >
+                View Resume ↗
+              </a>
 
-        <div className="mt-8 rounded-3xl border border-slate-200 bg-white p-7 shadow-sm">
-          <div className="flex justify-between gap-4">
-            <div>
-              <h3 className="text-xl font-black">
-                {
-                  skillCategories[
-                    selectedSkill as keyof typeof skillCategories
-                  ].title
-                }
+              <a
+                href="#contact"
+                className="rounded-full px-6 py-3 font-bold text-purple-700"
+              >
+                Contact Me ↗
+              </a>
+            </div>
+
+            <div className="mt-6 flex flex-wrap gap-5 text-sm font-semibold text-slate-600">
+              <a
+                href="https://www.linkedin.com/in/olivia-nalwoga-a3ab10382/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-purple-700"
+              >
+                LinkedIn ↗
+              </a>
+
+              <a
+                href="https://github.com/Olivia-Nalwoga"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-purple-700"
+              >
+                GitHub ↗
+              </a>
+
+              <span>Cottage Grove, Minnesota</span>
+            </div>
+          </div>
+
+          {/* CURRENT STATUS CARD */}
+          <aside className="rounded-3xl border border-purple-100 bg-purple-50 p-8">
+            <p className="text-xs font-black uppercase tracking-[0.2em] text-purple-700">
+              Currently
+            </p>
+
+            <h2 className="mt-5 text-3xl font-black">M.S. Data Science</h2>
+
+            <p className="mt-1 text-lg text-slate-600">
+              University of St. Thomas
+            </p>
+
+            <div className="mt-7 border-t border-purple-200 pt-7">
+              <p className="text-xs font-black uppercase tracking-[0.18em] text-purple-700">
+                Current Role
+              </p>
+
+              <h3 className="mt-3 text-xl font-black">
+                Graduate Research Assistant
               </h3>
 
-              <p className="mt-1 text-slate-600">
-                {
-                  skillCategories[
-                    selectedSkill as keyof typeof skillCategories
-                  ].subtitle
-                }
+              <p className="mt-2 text-sm leading-6 text-slate-600">
+                Data Science research · Python & SQL · Technical support
               </p>
             </div>
 
-            <span className="h-fit rounded-full bg-slate-100 px-3 py-1 text-sm font-bold">
-              {
-                skillCategories[
-                  selectedSkill as keyof typeof skillCategories
-                ].skills.length
-              }{" "}
-              skills
-            </span>
-          </div>
+            <div className="mt-8 grid grid-cols-2 gap-4">
+              <div className="rounded-2xl bg-white p-5">
+                <p className="text-3xl font-black text-purple-700">4.0</p>
+                <p className="mt-1 text-sm text-slate-500">Graduate GPA</p>
+              </div>
 
-          <div className="mt-6 flex flex-wrap gap-3">
-            {skillCategories[
-              selectedSkill as keyof typeof skillCategories
-            ].skills.map((skill) => (
-              <span
-                key={skill}
-                className="rounded-full border border-slate-200 px-4 py-2 text-sm font-bold"
+              <div className="rounded-2xl bg-white p-5">
+                <p className="text-3xl font-black text-purple-700">Dec 2027</p>
+                <p className="mt-1 text-sm text-slate-500">Graduation</p>
+              </div>
+            </div>
+
+            <a
+              href="#experience"
+              className="mt-7 inline-block text-sm font-bold text-purple-700"
+            >
+              View professional experience ↓
+            </a>
+          </aside>
+        </section>
+
+        {/* PROOF STRIP */}
+        <section className="mx-auto max-w-7xl px-6 pb-16">
+          <div className="grid overflow-hidden rounded-2xl border border-slate-200 sm:grid-cols-2 lg:grid-cols-4">
+            {[
+              ["4.0 / 4.0", "Graduate GPA"],
+              ["92,988", "Health records analyzed"],
+              ["14 → 8", "Predictors reduced with LASSO"],
+              ["8", "Tables designed in Oracle SQL"],
+            ].map(([value, label]) => (
+              <div
+                key={label}
+                className="border-b border-slate-200 p-6 sm:border-r lg:border-b-0"
               >
-                {skill}
-              </span>
+                <p className="text-3xl font-black text-purple-700">{value}</p>
+                <p className="mt-2 text-sm text-slate-500">{label}</p>
+              </div>
             ))}
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* EDUCATION */}
-      <section id="education" className="bg-slate-50">
-        <div className="mx-auto max-w-7xl px-6 py-20">
-          <h2 className="text-4xl font-black">Education</h2>
+        {/* PROJECTS */}
+        <section id="projects" className="bg-slate-50">
+          <div className="mx-auto max-w-7xl px-6 py-20">
+            <p className="text-xs font-black uppercase tracking-[0.2em] text-purple-700">
+              01 / Selected Data Projects
+            </p>
 
-          <p className="mt-3 text-lg text-slate-600">
-            Academic background in statistics and data science.
-          </p>
+            <h2 className="mt-3 text-4xl font-black">Selected Data Projects</h2>
 
-          <div className="mt-10 grid gap-4 md:grid-cols-2">
-            {Object.entries(education).map(([key, item]) => {
-              const selected = selectedEducation === key;
+            <p className="mt-3 max-w-3xl text-lg leading-8 text-slate-600">
+              Applied work demonstrating statistical modeling, Python, SQL,
+              database design, validation, and reproducible analysis.
+            </p>
 
-              return (
-                <button
-                  key={key}
-                  onClick={() => setSelectedEducation(key)}
-                  className={`rounded-2xl border p-6 text-left ${
-                    selected
-                      ? "border-purple-700 bg-purple-50"
-                      : "border-slate-200 bg-white"
-                  }`}
-                >
-                  <div className="flex justify-between">
-                    <h3 className="text-xl font-black">{item.degree}</h3>
+            <div className="mt-10 space-y-8">
+              {/* NHANES PROJECT */}
+              <article className="grid overflow-hidden rounded-3xl border border-slate-200 bg-white lg:grid-cols-2">
+                <div className="p-8">
+                  <div className="flex flex-wrap justify-between gap-3">
+                    <p className="text-xs font-black uppercase tracking-widest text-purple-700">
+                      01 / Statistical Learning
+                    </p>
 
-                    <span
-                      className={`rounded-full px-3 py-1 text-xs font-bold ${
-                        selected
-                          ? "bg-purple-700 text-white"
-                          : "bg-slate-100"
-                      }`}
-                    >
-                      {selected ? "Selected" : "Select"}
+                    <span className="rounded-full bg-purple-50 px-3 py-1 text-xs font-bold text-purple-700">
+                      Featured Project
                     </span>
                   </div>
-                </button>
-              );
-            })}
-          </div>
 
-          <div className="mt-8 rounded-3xl border bg-white p-8 shadow-sm">
-            {(() => {
-              const item =
-                education[
-                  selectedEducation as keyof typeof education
-                ];
+                  <h3 className="mt-5 text-3xl font-black">
+                    High-Dimensional Variable Selection in NHANES
+                  </h3>
 
-              return (
-                <>
-                  <h3 className="text-2xl font-black">{item.degree}</h3>
+                  <div className="mt-7 space-y-5">
+                    <div>
+                      <p className="text-xs font-black uppercase tracking-widest text-slate-500">
+                        Problem
+                      </p>
 
-                  <div className="mt-7 grid gap-5 md:grid-cols-2">
+                      <p className="mt-2 leading-7 text-slate-600">
+                        Can a smaller predictor set retain the predictive
+                        performance of a larger model for hemoglobin levels?
+                      </p>
+                    </div>
+
+                    <div>
+                      <p className="text-xs font-black uppercase tracking-widest text-slate-500">
+                        Approach
+                      </p>
+
+                      <p className="mt-2 leading-7 text-slate-600">
+                        Prepared and analyzed NHANES data in Python using
+                        pandas and NumPy, selected variables with
+                        cross-validated LASSO, and compared full and reduced
+                        linear regression models on held-out data.
+                      </p>
+                    </div>
+
+                    <div>
+                      <p className="text-xs font-black uppercase tracking-widest text-slate-500">
+                        Result
+                      </p>
+
+                      <p className="mt-2 leading-7 text-slate-600">
+                        Reduced 14 candidate predictors to 8 while test MSE
+                        changed only from approximately 0.00489 to 0.00502.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="mt-6 flex flex-wrap gap-2">
                     {[
-                      ["University", item.school],
-                      ["Program", item.program],
-                      ["GPA", item.gpa],
-                      ["Expected / Completed", item.graduation],
-                      ["Location", item.location],
-                    ].map(([label, value]) => (
-                      <div
-                        key={label}
-                        className="rounded-2xl border border-slate-200 bg-slate-50 p-5"
+                      "Python",
+                      "pandas",
+                      "NumPy",
+                      "LASSO",
+                      "Regression",
+                      "Permutation Testing",
+                      "Bootstrap",
+                    ].map((tag) => (
+                      <span
+                        key={tag}
+                        className="rounded-full bg-purple-50 px-3 py-2 text-xs font-bold text-purple-700"
                       >
-                        <p className="text-xs font-bold uppercase tracking-wider text-slate-500">
-                          {label}
-                        </p>
-
-                        <p className="mt-2 font-semibold">{value}</p>
-                      </div>
+                        {tag}
+                      </span>
                     ))}
                   </div>
-                </>
-              );
-            })()}
-          </div>
-        </div>
-      </section>
 
-      {/* EXPERIENCE */}
-      <section id="experience" className="mx-auto max-w-7xl px-6 py-20">
-        <h2 className="text-4xl font-black">Experience</h2>
-
-        <p className="mt-3 text-lg text-slate-600">
-          Technical, analytical, and operational experience.
-        </p>
-
-        <div className="mt-10 grid gap-4 lg:grid-cols-4">
-          {Object.entries(experiences).map(([key, exp]) => {
-            const selected = selectedExperience === key;
-
-            return (
-              <button
-                key={key}
-                onClick={() => setSelectedExperience(key)}
-                className={`rounded-2xl border p-5 text-left ${
-                  selected
-                    ? "border-purple-700 bg-purple-50"
-                    : "border-slate-200 bg-white"
-                }`}
-              >
-                <h3 className="font-black">{exp.title}</h3>
-                <p className="mt-2 text-sm text-slate-500">{exp.date}</p>
-              </button>
-            );
-          })}
-        </div>
-
-        <div className="mt-8 rounded-3xl border bg-white p-8 shadow-sm">
-          {(() => {
-            const exp =
-              experiences[
-                selectedExperience as keyof typeof experiences
-              ];
-
-            return (
-              <>
-                <p className="text-xs font-bold uppercase tracking-widest text-purple-700">
-                  {exp.label}
-                </p>
-
-                <h3 className="mt-3 text-2xl font-black">{exp.title}</h3>
-
-                <p className="mt-1 font-semibold text-purple-700">
-                  {exp.company}
-                </p>
-
-                <p className="mt-1 text-sm text-slate-500">{exp.date}</p>
-
-                <ul className="mt-6 space-y-3">
-                  {exp.bullets.map((bullet) => (
-                    <li
-                      key={bullet}
-                      className="flex gap-3 text-slate-600"
+                  <div className="mt-7 flex flex-wrap gap-5">
+                    <a
+                      href="https://github.com/Olivia-Nalwoga/UST-631-high-dimensional-variable-selection"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="font-bold text-purple-700"
                     >
-                      <span className="font-black text-purple-700">•</span>
-                      <span>{bullet}</span>
-                    </li>
-                  ))}
-                </ul>
-              </>
-            );
-          })()}
-        </div>
-      </section>
+                      GitHub ↗
+                    </a>
 
-      {/* COURSEWORK */}
-      <section id="coursework" className="bg-slate-50">
-        <div className="mx-auto max-w-7xl px-6 py-20">
-          <h2 className="text-4xl font-black">Coursework</h2>
+                    <a
+                      href="https://github.com/Olivia-Nalwoga/UST-631-high-dimensional-variable-selection/blob/main/analysis.ipynb"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="font-bold text-purple-700"
+                    >
+                      Notebook ↗
+                    </a>
 
-          <p className="mt-3 text-lg text-slate-600">
-            Selected MS Data Science coursework showing my technical
-            development.
-          </p>
+                    <a
+                      href="#research"
+                      className="font-bold text-purple-700"
+                    >
+                      Research Details ↓
+                    </a>
+                  </div>
+                </div>
 
-          <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-            {Object.entries(courses).map(([key, course]) => {
-              const selected = selectedCourse === key;
+                <div className="bg-purple-50 p-8">
+                  <div className="flex justify-between text-xs font-black uppercase tracking-widest text-slate-500">
+                    <span>Model Comparison</span>
+                    <span>NHANES / Python</span>
+                  </div>
 
-              return (
-                <button
-                  key={key}
-                  onClick={() => setSelectedCourse(key)}
-                  className={`rounded-2xl border p-6 text-left ${
-                    selected
-                      ? "border-purple-400 bg-purple-50"
-                      : "border-slate-200 bg-white"
-                  }`}
-                >
-                  <div className="flex items-start justify-between gap-3">
-                    <h3 className="text-lg font-black">
-                      {course.title}
-                    </h3>
+                  <div className="mt-10 flex items-center justify-between">
+                    <div>
+                      <p className="text-6xl font-black text-purple-950">14</p>
+                      <p className="mt-2 text-sm text-slate-500">
+                        Candidate predictors
+                      </p>
+                    </div>
 
-                    <span className="whitespace-nowrap rounded-full bg-slate-100 px-3 py-1 text-xs font-bold">
-                      {course.grade}
+                    <span className="text-4xl text-purple-700">→</span>
+
+                    <div>
+                      <p className="text-6xl font-black text-purple-700">8</p>
+                      <p className="mt-2 text-sm text-slate-500">
+                        LASSO-selected
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="mt-8 grid grid-cols-[repeat(14,minmax(0,1fr))] gap-1">
+                    {Array.from({ length: 14 }).map((_, index) => (
+                      <div
+                        key={index}
+                        className={`h-5 rounded-sm ${
+                          index < 8 ? "bg-purple-700" : "bg-purple-200"
+                        }`}
+                      />
+                    ))}
+                  </div>
+
+                  <div className="mt-10">
+                    <div className="flex justify-between text-sm">
+                      <span>Full · 14 predictors</span>
+                      <strong>0.00489</strong>
+                    </div>
+
+                    <div className="mt-2 h-3 rounded-full bg-purple-100">
+                      <div className="h-3 w-[81.5%] rounded-full bg-purple-400" />
+                    </div>
+
+                    <div className="mt-5 flex justify-between text-sm">
+                      <span>Reduced · 8 predictors</span>
+                      <strong>0.00502</strong>
+                    </div>
+
+                    <div className="mt-2 h-3 rounded-full bg-purple-100">
+                      <div className="h-3 w-[83.7%] rounded-full bg-purple-700" />
+                    </div>
+
+                    <p className="mt-5 text-xs leading-5 text-slate-500">
+                      Lower is better. The reduced model maintained similar
+                      held-out performance with fewer predictors.
+                    </p>
+                  </div>
+                </div>
+              </article>
+
+              {/* DATABASE PROJECT */}
+              <article className="grid overflow-hidden rounded-3xl border border-slate-200 bg-white lg:grid-cols-2">
+                <div className="p-8">
+                  <div className="flex flex-wrap justify-between gap-3">
+                    <p className="text-xs font-black uppercase tracking-widest text-purple-700">
+                      02 / Database Design
+                    </p>
+
+                    <span className="rounded-full bg-slate-100 px-3 py-1 text-xs font-bold">
+                      Synthetic Dataset
                     </span>
                   </div>
 
-                  <p className="mt-5 text-slate-600">
-                    Click to view what I learned →
-                  </p>
-                </button>
-              );
-            })}
+                  <h3 className="mt-5 text-3xl font-black">
+                    Relational Job Market Analytics Database
+                  </h3>
+
+                  <div className="mt-7 space-y-5">
+                    <div>
+                      <p className="text-xs font-black uppercase tracking-widest text-slate-500">
+                        Problem
+                      </p>
+
+                      <p className="mt-2 leading-7 text-slate-600">
+                        How can related recruitment, skills, applications, and
+                        salary records be structured for consistent analysis?
+                      </p>
+                    </div>
+
+                    <div>
+                      <p className="text-xs font-black uppercase tracking-widest text-slate-500">
+                        Approach
+                      </p>
+
+                      <p className="mt-2 leading-7 text-slate-600">
+                        Designed a normalized Oracle schema with primary and
+                        foreign keys, junction tables, validation constraints,
+                        triggers, reusable views, and multi-table analytical
+                        SQL.
+                      </p>
+                    </div>
+
+                    <div>
+                      <p className="text-xs font-black uppercase tracking-widest text-slate-500">
+                        Result
+                      </p>
+
+                      <p className="mt-2 leading-7 text-slate-600">
+                        Built an eight-table relational model with three trigger
+                        definitions and two reusable views for connected
+                        application, skill, employer, and salary analysis.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="mt-6 flex flex-wrap gap-2">
+                    {[
+                      "Oracle SQL",
+                      "Relational Modeling",
+                      "Constraints",
+                      "Triggers",
+                      "Views",
+                    ].map((tag) => (
+                      <span
+                        key={tag}
+                        className="rounded-full bg-purple-50 px-3 py-2 text-xs font-bold text-purple-700"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+
+                  <div className="mt-7 flex gap-5">
+                    <a
+                      href="https://github.com/Olivia-Nalwoga/job-market-salary-analytics"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="font-bold text-purple-700"
+                    >
+                      GitHub ↗
+                    </a>
+
+                    <a
+                      href="https://github.com/Olivia-Nalwoga/job-market-salary-analytics/blob/main/final_project_DDL.sql"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="font-bold text-purple-700"
+                    >
+                      View SQL ↗
+                    </a>
+                  </div>
+                </div>
+
+                {/* REAL ERD IMAGE */}
+                <div className="bg-slate-50 p-8">
+                  <div className="flex justify-between text-xs font-black uppercase tracking-widest text-slate-500">
+                    <span>Relational Schema</span>
+                    <span>8 Tables</span>
+                  </div>
+
+                  <div className="mt-6 rounded-2xl border border-slate-200 bg-white p-4">
+                    <img
+                      src="/Relational_1.png"
+                      alt="Entity relationship diagram for the Job Market Analytics database showing JobSeeker, JobSeekerSkill, Skill, JobSkill, JobPosting, Employer, Application, and Salary tables and their relationships."
+                      className="h-auto w-full"
+                    />
+                  </div>
+
+                  <div className="mt-6 grid grid-cols-3 gap-4 text-center">
+                    <div className="rounded-xl bg-white p-4">
+                      <p className="text-3xl font-black text-purple-700">8</p>
+                      <p className="text-xs text-slate-500">Tables</p>
+                    </div>
+
+                    <div className="rounded-xl bg-white p-4">
+                      <p className="text-3xl font-black text-purple-700">3</p>
+                      <p className="text-xs text-slate-500">Triggers</p>
+                    </div>
+
+                    <div className="rounded-xl bg-white p-4">
+                      <p className="text-3xl font-black text-purple-700">2</p>
+                      <p className="text-xs text-slate-500">Views</p>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </div>
           </div>
+        </section>
 
-          <div className="mt-8 rounded-3xl border bg-white p-8 shadow-sm">
-            {(() => {
-              const course =
-                courses[selectedCourse as keyof typeof courses];
+        {/* EXPERIENCE */}
+        <section id="experience" className="bg-white">
+          <div className="mx-auto max-w-7xl px-6 py-20">
+            <div className="grid gap-12 lg:grid-cols-[0.33fr_0.67fr]">
+              <div>
+                <p className="text-xs font-black uppercase tracking-[0.2em] text-purple-700">
+                  02 / Professional Experience
+                </p>
 
-              return (
-                <>
-                  <div className="flex flex-wrap justify-between gap-4">
-                    <h3 className="text-2xl font-black">
-                      {course.title}
+                <h2 className="mt-3 text-4xl font-black">
+                  Professional
+                  <br />
+                  Experience
+                </h2>
+
+                <p className="mt-5 leading-7 text-slate-600">
+                  Experience with research, organizational data, enterprise
+                  systems, reporting, and technical environments.
+                </p>
+
+                <a
+                  href="/resume.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-6 inline-block font-bold text-purple-700"
+                >
+                  View full resume ↗
+                </a>
+              </div>
+
+              <ol className="border-l border-slate-200 pl-8">
+                {experiences.map((experience) => (
+                  <li key={experience.title} className="relative pb-10 last:pb-0">
+                    <span className="absolute -left-[37px] top-2 h-3 w-3 rounded-full bg-purple-700" />
+
+                    <p className="text-sm text-slate-500">{experience.date}</p>
+
+                    <h3 className="mt-2 text-xl font-black">
+                      {experience.title}
                     </h3>
 
-                    <span className="rounded-full bg-slate-100 px-4 py-2 text-sm font-bold">
-                      {course.status}: {course.grade}
-                    </span>
-                  </div>
+                    <p className="mt-1 font-semibold text-purple-700">
+                      {experience.company}
+                    </p>
 
-                  <p className="mt-6 max-w-4xl text-lg leading-8 text-slate-600">
-                    {course.description}
+                    <p className="mt-3 text-xs font-black uppercase tracking-widest text-slate-500">
+                      {experience.focus}
+                    </p>
+
+                    <p className="mt-3 max-w-3xl leading-7 text-slate-600">
+                      {experience.description}
+                    </p>
+                  </li>
+                ))}
+              </ol>
+            </div>
+          </div>
+        </section>
+
+        {/* SKILLS */}
+        <section id="skills" className="bg-slate-50">
+          <div className="mx-auto max-w-7xl px-6 py-20">
+            <p className="text-xs font-black uppercase tracking-[0.2em] text-purple-700">
+              03 / Technical Skills
+            </p>
+
+            <h2 className="mt-3 text-4xl font-black">Technical Skills</h2>
+
+            <p className="mt-3 max-w-3xl text-lg leading-8 text-slate-600">
+              Tools and methods used across projects, research, graduate
+              coursework, and professional roles.
+            </p>
+
+            <div className="mt-10 grid gap-5 lg:grid-cols-3">
+              {skillGroups.map((group) => (
+                <article
+                  key={group.title}
+                  className="rounded-3xl border border-slate-200 bg-white p-7"
+                >
+                  <span className="text-xs font-black text-purple-700">
+                    {group.number}
+                  </span>
+
+                  <h3 className="mt-4 text-xl font-black">{group.title}</h3>
+
+                  <p className="mt-2 text-sm leading-6 text-slate-600">
+                    {group.description}
                   </p>
 
-                  <p className="mt-7 text-xs font-bold uppercase tracking-[0.2em] text-slate-500">
-                    Key Skills & Tools
-                  </p>
-
-                  <div className="mt-4 flex flex-wrap gap-3">
-                    {course.skills.map((skill) => (
+                  <div className="mt-6 flex flex-wrap gap-2">
+                    {group.skills.map((skill) => (
                       <span
                         key={skill}
-                        className="rounded-full border px-4 py-2 text-sm font-bold"
+                        className="rounded-full bg-purple-50 px-3 py-2 text-xs font-semibold text-purple-800"
                       >
                         {skill}
                       </span>
                     ))}
                   </div>
-                </>
-              );
-            })()}
+                </article>
+              ))}
+            </div>
+
+            <div className="mt-7 flex flex-wrap items-center gap-3 text-sm">
+              <strong>Enterprise systems:</strong>
+
+              {enterpriseSystems.map((system) => (
+                <span
+                  key={system}
+                  className="rounded-full border border-slate-200 bg-white px-3 py-2"
+                >
+                  {system}
+                </span>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* CERTIFICATIONS */}
-      <section id="certifications" className="mx-auto max-w-7xl px-6 py-20">
-        <h2 className="text-4xl font-black">Certifications</h2>
-
-        <p className="mt-3 text-lg text-slate-600">
-          Additional learning supporting my technical development.
-        </p>
-
-        <div className="mt-10 max-w-xl rounded-2xl border border-slate-200 p-6 shadow-sm">
-          <h3 className="text-xl font-black">
-            Generative AI for Students
-          </h3>
-
-          <p className="mt-2 font-semibold text-purple-700">
-            University of St. Thomas
-          </p>
-
-          <p className="mt-2 text-sm text-slate-500">
-            Digital Badge · March 2026
-          </p>
-        </div>
-      </section>
-
-      {/* CONTACT */}
-      <section id="contact" className="bg-purple-950 text-white">
-        <div className="mx-auto max-w-7xl px-6 py-20">
-          <p className="text-sm font-bold uppercase tracking-[0.2em] text-purple-300">
-            Contact
-          </p>
-
-          <h2 className="mt-4 text-4xl font-black md:text-5xl">
-            Let&apos;s turn data into something useful.
-          </h2>
-
-          <p className="mt-5 max-w-3xl text-lg leading-8 text-purple-100">
-            I&apos;m interested in opportunities in Data Science, Data
-            Analytics, and Data Engineering where I can apply Python, SQL,
-            statistics, databases, and analytical problem solving.
-          </p>
-
-          <div className="mt-8 flex flex-wrap gap-3">
-            <a
-              href="mailto:nalwogaolivia93@gmail.com"
-              className="rounded-full bg-white px-6 py-3 font-bold text-purple-900"
-            >
-              Email
-            </a>
-
-            <a
-              href="https://www.linkedin.com/in/olivia-nalwoga-a3ab10382/"
-              target="_blank"
-              className="rounded-full border border-purple-400 px-6 py-3 font-bold"
-            >
-              LinkedIn
-            </a>
-
-            <a
-              href="https://github.com/Olivia-Nalwoga"
-              target="_blank"
-              className="rounded-full border border-purple-400 px-6 py-3 font-bold"
-            >
-              GitHub
-            </a>
-
-            <a
-              href="/resume.pdf"
-              target="_blank"
-              className="rounded-full border border-purple-400 px-6 py-3 font-bold"
-            >
-              Resume
-            </a>
-          </div>
-
-          <div className="mt-16 border-t border-purple-800 pt-7 text-sm text-purple-300">
-            <p className="font-bold text-white">Olivia Nalwoga</p>
-            <p className="mt-1">
-              MS Data Science · University of St. Thomas
+        {/* RESEARCH */}
+        <section id="research" className="bg-white">
+          <div className="mx-auto max-w-7xl px-6 py-20">
+            <p className="text-xs font-black uppercase tracking-[0.2em] text-purple-700">
+              04 / Research
             </p>
-            <p className="mt-4">
-              © 2026 Olivia Nalwoga. All rights reserved.
+
+            <h2 className="mt-3 text-4xl font-black">Research</h2>
+
+            <p className="mt-3 max-w-3xl text-lg leading-8 text-slate-600">
+              Applied statistical learning, model selection, validation, and
+              rigorous analysis of complex datasets.
             </p>
+
+            <article className="mt-10 overflow-hidden rounded-3xl border border-slate-200 bg-white">
+              <div className="grid lg:grid-cols-[0.42fr_0.58fr]">
+                <div className="bg-purple-50 p-8">
+                  <p className="text-xs font-black uppercase tracking-widest text-purple-700">
+                    Applied Statistical Learning
+                  </p>
+
+                  <h3 className="mt-4 text-3xl font-black">
+                    How much model complexity do we need?
+                  </h3>
+
+                  <p className="mt-5 leading-7 text-slate-600">
+                    Using NHANES health data, I investigated whether a smaller
+                    set of demographic and blood-count predictors could
+                    preserve predictive performance for hemoglobin levels
+                    while simplifying the model.
+                  </p>
+
+                  <div className="mt-7 rounded-2xl bg-white p-5">
+                    <p className="text-xs font-black uppercase tracking-widest text-purple-700">
+                      Main Finding
+                    </p>
+
+                    <p className="mt-3 leading-7 text-slate-600">
+                      LASSO selected 8 of 14 candidate predictors. The reduced
+                      linear model produced similar held-out error, with an MSE
+                      difference of approximately 0.00013.
+                    </p>
+                  </div>
+
+                  <a
+                    href="https://github.com/Olivia-Nalwoga/UST-631-high-dimensional-variable-selection/blob/main/analysis.ipynb"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-6 inline-block font-bold text-purple-700"
+                  >
+                    Read the analysis notebook ↗
+                  </a>
+                </div>
+
+                <div className="p-8">
+                  <div className="space-y-7">
+                    <div>
+                      <h4 className="font-black">Dataset & Preparation</h4>
+                      <p className="mt-2 leading-7 text-slate-600">
+                        The NHANES source data contained 92,988 records and 220
+                        variables. Fourteen candidate predictors were used for
+                        model development after preparation.
+                      </p>
+                    </div>
+
+                    <div>
+                      <h4 className="font-black">
+                        Model Selection & Evaluation
+                      </h4>
+                      <p className="mt-2 leading-7 text-slate-600">
+                        Used a 70/30 train-test split, standardization,
+                        cross-validated LASSO, and full versus reduced linear
+                        regression evaluated using test-set mean squared error.
+                      </p>
+                    </div>
+
+                    <div>
+                      <h4 className="font-black">
+                        Validation & Uncertainty
+                      </h4>
+                      <p className="mt-2 leading-7 text-slate-600">
+                        Used 1,000 permutation tests and 2,000 bootstrap
+                        resamples to examine the observed error difference and
+                        variability in model performance.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="border-t border-slate-200 bg-slate-50 p-8">
+                <h4 className="font-black">Methodological Context</h4>
+
+                <p className="mt-3 max-w-5xl leading-7 text-slate-600">
+                  The analysis is observational and does not establish
+                  causation. NHANES survey weights were not incorporated, and
+                  results may vary with predictor selection, regularization
+                  strength, and modeling choices.
+                </p>
+              </div>
+            </article>
           </div>
-        </div>
-      </section>
-    </main>
+        </section>
+
+        {/* EDUCATION */}
+        <section id="education" className="bg-slate-50">
+          <div className="mx-auto max-w-7xl px-6 py-20">
+            <p className="text-xs font-black uppercase tracking-[0.2em] text-purple-700">
+              05 / Education & Credentials
+            </p>
+
+            <h2 className="mt-3 text-4xl font-black">
+              Education & Credentials
+            </h2>
+
+            <div className="mt-10 grid gap-6 md:grid-cols-2">
+              <article className="rounded-3xl border border-slate-200 bg-white p-8">
+                <p className="text-xs font-black uppercase tracking-widest text-purple-700">
+                  Graduate Education
+                </p>
+
+                <h3 className="mt-4 text-2xl font-black">
+                  University of St. Thomas
+                </h3>
+
+                <p className="mt-2 text-lg font-semibold">M.S. Data Science</p>
+
+                <p className="mt-3 text-slate-600">
+                  4.0 / 4.0 GPA · Expected Dec 2027
+                </p>
+
+                <p className="mt-6 text-sm leading-7 text-slate-600">
+                  <strong className="text-slate-900">
+                    Relevant Coursework:
+                  </strong>{" "}
+                  Database Management Systems & Design, Data Preparation &
+                  Analysis, Cloud Computing, Data Analytics & Visualization,
+                  and Data Warehousing.
+                </p>
+
+                <p className="mt-3 text-xs text-slate-500">
+                  Data Analytics & Visualization and Data Warehousing are in
+                  progress, Fall 2026.
+                </p>
+              </article>
+
+              <article className="rounded-3xl border border-slate-200 bg-white p-8">
+                <p className="text-xs font-black uppercase tracking-widest text-purple-700">
+                  Undergraduate Education
+                </p>
+
+                <h3 className="mt-4 text-2xl font-black">
+                  Makerere University
+                </h3>
+
+                <p className="mt-2 text-lg font-semibold">
+                  Bachelor&apos;s Degree in Statistics
+                </p>
+
+                <p className="mt-3 text-slate-600">
+                  GPA 4.02 / 5.0 · Completed Dec 2024
+                </p>
+
+                <p className="mt-3 text-slate-600">Kampala, Uganda</p>
+
+                <div className="mt-8 border-t border-slate-200 pt-6">
+                  <p className="text-xs font-black uppercase tracking-widest text-purple-700">
+                    Additional Credential
+                  </p>
+
+                  <h4 className="mt-3 text-lg font-black">
+                    Generative AI for Students
+                  </h4>
+
+                  <p className="mt-2 text-sm text-slate-600">
+                    University of St. Thomas · Digital Badge · March 2026
+                  </p>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        {/* CONTACT */}
+        <section id="contact" className="bg-purple-950 text-white">
+          <div className="mx-auto grid max-w-7xl gap-10 px-6 py-20 md:grid-cols-2">
+            <div>
+              <p className="text-xs font-black uppercase tracking-[0.2em] text-purple-300">
+                06 / Contact
+              </p>
+
+              <h2 className="mt-4 text-4xl font-black md:text-5xl">
+                Let&apos;s work together
+                <span className="text-purple-400">.</span>
+              </h2>
+
+              <p className="mt-5 max-w-2xl text-lg leading-8 text-purple-100">
+                I&apos;m interested in data analytics, junior data science, and
+                related opportunities where strong statistical reasoning,
+                Python, SQL, and analytical problem solving can support
+                real-world decisions.
+              </p>
+
+              <a
+                href="mailto:nalwogaolivia93@gmail.com"
+                className="mt-6 inline-block font-semibold text-white"
+              >
+                nalwogaolivia93@gmail.com ↗
+              </a>
+            </div>
+
+            <div className="flex flex-col justify-center gap-3 md:items-end">
+              <a
+                href="mailto:nalwogaolivia93@gmail.com"
+                className="w-full max-w-xs rounded-full bg-white px-6 py-3 text-center font-bold text-purple-950"
+              >
+                Email Olivia ↗
+              </a>
+
+              <a
+                href="https://www.linkedin.com/in/olivia-nalwoga-a3ab10382/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full max-w-xs rounded-full border border-purple-500 px-6 py-3 text-center font-bold"
+              >
+                LinkedIn ↗
+              </a>
+
+              <a
+                href="https://github.com/Olivia-Nalwoga"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full max-w-xs rounded-full border border-purple-500 px-6 py-3 text-center font-bold"
+              >
+                GitHub ↗
+              </a>
+
+              <a
+                href="/resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full max-w-xs rounded-full border border-purple-500 px-6 py-3 text-center font-bold"
+              >
+                View Resume ↗
+              </a>
+            </div>
+          </div>
+
+          <footer className="mx-auto flex max-w-7xl flex-wrap justify-between gap-4 border-t border-purple-800 px-6 py-7 text-sm text-purple-300">
+            <p>© 2026 Olivia Nalwoga</p>
+            <p>Data Analyst | Data Science</p>
+            <a href="#home">Back to top ↑</a>
+          </footer>
+        </section>
+      </main>
+    </>
   );
 }
