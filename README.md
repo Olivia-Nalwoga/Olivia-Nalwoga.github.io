@@ -1,47 +1,47 @@
-# Olivia Nalwoga | Data Science Portfolio
+# Olivia Nalwoga | Data Analyst & Data Science Portfolio
 
-Welcome to my personal data science portfolio.
+A professional portfolio highlighting Python, SQL, statistics, relational database design, and experience working with organizational data. Applied research adds depth through model selection and validation.
 
-I am an **MS Data Science student at the University of St. Thomas** with a background in Statistics and experience in data analytics, statistical modeling, database design, and technical support.
+[Live portfolio](https://olivia-nalwoga.github.io/) · [LinkedIn](https://www.linkedin.com/in/olivia-nalwoga-a3ab10382/) · [GitHub](https://github.com/Olivia-Nalwoga)
 
-I am interested in opportunities in **Data Science, Data Analytics, Business Analytics, and Data Engineering**.
+## Featured work
 
-## Portfolio
+- [High-Dimensional Variable Selection in NHANES](https://github.com/Olivia-Nalwoga/UST-631-high-dimensional-variable-selection): LASSO selected 8 of 14 candidate predictors; full and reduced linear regression models had similar held-out test error.
+- [Relational Job Market Analytics Database](https://github.com/Olivia-Nalwoga/job-market-salary-analytics): an eight-table Oracle schema with constraints, trigger definitions, views, and analytical SQL using **synthetic data**.
 
-🌐 [View My Live Portfolio](https://olivia-nalwoga.github.io/)
+Professional experience, technical skills, research methods and limitations, education, and contact information are visible without selector tabs. The resume PDF is preserved.
 
-## Featured Projects
+## Development
 
-### High-Dimensional Variable Selection in NHANES
+Use Node.js 24 (matching the GitHub Actions workflow).
 
-Statistical learning project analyzing NHANES health data using Python, LASSO regression, permutation testing, and bootstrap validation.
+```sh
+npm ci
+npm run dev
+npm run lint
+npm run build
+npx tsc --noEmit
+```
 
-[View Project on GitHub](https://github.com/Olivia-Nalwoga/UST-631-high-dimensional-variable-selection)
+Next.js 16.3.5 App Router with React 19 and Tailwind CSS 4. Read the installed Next.js guides in `node_modules/next/dist/docs/` before changing framework behavior.
 
-### Job Market & Salary Analytics
+- `app/page.tsx`: static homepage sections.
+- `app/content.ts`: verified links, experience, and skills.
+- `app/components/`: navigation and project evidence visuals; only `mobile-nav.tsx` is a client component.
+- `app/globals.css`: light purple/white design, Geist typography, responsive and accessibility rules.
+- `app/layout.tsx`, `app/robots.ts`, `app/sitemap.ts`: metadata and structured data.
+- `scripts/generate-social-assets.mjs`: regenerate the committed Open Graph image and favicon using `node scripts/generate-social-assets.mjs` after `npm ci`.
 
-Oracle SQL analytics project using relational database design, data modeling, triggers, views, and analytical queries to explore job-market and salary trends.
+## Deployment
 
-[View Project on GitHub](https://github.com/Olivia-Nalwoga/job-market-salary-analytics)
+The existing GitHub Actions workflow builds and deploys `out/` on pushes to `master`. `next.config.ts` retains `output: "export"`; the site requires no running Next.js server. Project images are local, and Next Image is explicitly unoptimized for static hosting. Robots and sitemap routes use `force-static`.
 
-## Technical Skills
+To inspect the actual export locally after a build:
 
-**Programming & Analytics:** Python, SQL, Excel, Statistical Analysis
+```sh
+python3 -m http.server 4173 --directory out --bind 127.0.0.1
+```
 
-**Databases & Data:** Oracle SQL Developer, Relational Database Design, Data Modeling
+## Content maintenance
 
-**Cloud & Tools:** AWS S3, Jupyter Notebook, GitHub, Cognos Analytics
-
-## Education
-
-**University of St. Thomas**  
-MS in Data Science  
-Expected Graduation: December 2027
-
-**Makerere University**  
-Bachelor's Degree in Statistics
-
-## Connect With Me
-
-- [LinkedIn](https://www.linkedin.com/in/olivia-nalwoga-a3ab10382/)
-- [Portfolio](https://olivia-nalwoga.github.io/)
+See [verified sources and content follow-ups](docs/content-sources.md) and [validation report](docs/validation.md). Update documented role/course dates when Olivia supplies changes. Do not alter `public/resume.pdf` without an editable source and authorization.
